@@ -1,10 +1,6 @@
 package enumexample;
 
-public class ClassInnerOutEnum {
-
-}
-
-enum InnerOutSizeEnum {
+public enum EnumDefault {
 
 	MEDIUM(8,"Medium"),
 	LARGE(16,"Large");
@@ -12,7 +8,7 @@ enum InnerOutSizeEnum {
 	private int size;
 	private String name;
 	
-	private InnerOutSizeEnum(int size,String name){
+	private EnumDefault(int size,String name){
 		this.size=size;
 		this.name=name;
 	}

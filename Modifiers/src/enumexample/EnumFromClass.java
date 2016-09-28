@@ -1,25 +1,25 @@
 package enumexample;
 
-public class SizeClass {
+public class EnumFromClass {
 	
-	private static final SizeClass MEDIUM = new SizeClass(0,8,"Medium");
-	private static final SizeClass LARGE = new SizeClass(1,16,"Large");
+	private static final EnumFromClass MEDIUM = new EnumFromClass(0,8,"Medium");
+	private static final EnumFromClass LARGE = new EnumFromClass(1,16,"Large");
 	
 	private int ordinal;
 	private int size;
 	private String name;
 	
-	private SizeClass(int ordinal,int size,String name){
+	EnumFromClass(int ordinal,int size,String name){
 		this.ordinal=ordinal;
 		this.size=size;
 		this.name=name;
 	}
 
-	public static SizeClass[] values(){
-		return new SizeClass[]{MEDIUM,LARGE};
+	public static EnumFromClass[] values(){
+		return new EnumFromClass[]{MEDIUM,LARGE};
 	}
 	
-	public static SizeClass valueOf(String enumName){
+	public static EnumFromClass valueOf(String enumName){
 		switch(enumName){
 		case "Medium":
 			return MEDIUM;
@@ -28,7 +28,8 @@ public class SizeClass {
 		default:
 			throw new IllegalArgumentException();			
 		}
-	}
+	}	
+	
 	
 	public int getOrdinal() {
 		return ordinal;
