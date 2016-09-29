@@ -31,6 +31,10 @@ public class ClassWithEnums {
 	
 	private EnumInPublic enumInner;
 	
+	public ClassWithEnums(){
+		
+	}
+	
 	public ClassWithEnums(EnumInPublic enumInner){
 		this.enumInner=enumInner;
 	}
@@ -41,8 +45,12 @@ public class ClassWithEnums {
 	}
 	
 	public static void allLocalEnums(){
-		for(LocalEnum e:LocalEnum.values())
+		for(EnumOutDefault e:EnumOutDefault.values())
 				System.out.println(e.toString());
+	}
+	
+	public EnumOutDefault allLocalEnums2(){
+		return EnumOutDefault.PAGE1;
 	}
 	
 	public void printout(){
@@ -52,14 +60,14 @@ public class ClassWithEnums {
 	
 }
 
-//only default access modifier
-enum LocalEnum{
+//implicitely default access modifier
+enum EnumOutDefault{
 	PAGE1,PAGE2;
 }
 
 class OutsideClass{
 	public static void allLocalEnums(){
-		for(LocalEnum e:LocalEnum.values())
+		for(EnumOutDefault e:EnumOutDefault.values())
 				System.out.println(e.toString());
 	}
 }

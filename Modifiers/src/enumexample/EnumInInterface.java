@@ -2,7 +2,7 @@ package enumexample;
 
 public interface EnumInInterface {
 	
-	enum EnumIn{
+	public enum EnumIn{
 		PAGE1,
 		PAGE2;
 	}
