@@ -12,7 +12,41 @@ public class ProgramFile {
 
 	public static void main(String[] args) {
 		
+		String fileName = "G://Test//Dir1//jpg//index.jpg";
+		infoFile(fileName);
 		
+	}
+	
+	static void infoFile(String fileName){
+		File file = new File(fileName);
+		if(file.exists()){
+			printOut("name\t" + file.getName());
+			printOut("path\t" + file.getPath());
+			printOut("absolute path\t" + file.getAbsolutePath());		
+			try {
+				printOut("canonical path\t" + file.getCanonicalPath());
+			} catch (IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			printOut("parent\t" + file.getParent());
+			printOut("toString" + file.toString());
+			System.out.println();
+			printOut("exists\t" + file.exists());
+			printOut("isFile" + file.isFile());
+			printOut("isDirectory\t" + file.isDirectory());
+			printOut("isAbsolute" + file.isAbsolute());
+			printOut("isHidden\t" + file.isHidden());		
+			System.out.println();
+			printOut("free space\t" + file.getFreeSpace()/1000000000 + " Gb");
+			printOut("total space\t" + file.getTotalSpace()/1000000000 + " Gb");
+			printOut("usable space\t" + file.getUsableSpace()/1000000000 + " Gb");		
+			printOut("length\t" + file.length()/1000 + " kb");
+		}		
+	}
+	
+	static void printOut(String s){
+		System.out.println(s);
 	}
 	
 	static void copyFile(){
